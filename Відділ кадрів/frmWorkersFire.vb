@@ -1,7 +1,7 @@
-﻿Public Class frmWorkers
+﻿Public Class frmWorkersFire
     Dim db As DataBase = New DataBase()
 
-    Private Sub frmWorkers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmWorkersFire_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SQLreader As System.Data.SQLite.SQLiteDataReader
         db.createDbConnection(Application.StartupPath & "/db.sqlite")
         SQLreader = db.queryDb("SELECT * FROM workers WHERE fired=0")
@@ -31,14 +31,10 @@
         db.closeDbConnection()
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
-    End Sub
-
     Private Sub cbOtdel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbOtdel.SelectedIndexChanged
         Dim SQLreader As System.Data.SQLite.SQLiteDataReader
         db.createDbConnection(Application.StartupPath & "/db.sqlite")
-        SQLreader = db.queryDb("SELECT * FROM workers WHERE otdel='" & cbOtdel.SelectedItem.ToString & "'")
+        SQLreader = db.queryDb("SELECT * FROM workers WHERE fired=0 AND otdel='" & cbOtdel.SelectedItem.ToString & "'")
         lstWorkers.Items.Clear()
 
         While SQLreader.Read
@@ -60,16 +56,16 @@
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         cbOtdel.Text = ""
-        frmWorkers_Load(Nothing, Nothing)
+        frmWorkersFire_Load(Nothing, Nothing)
     End Sub
 
-    Private Sub lstWorkers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstWorkers.SelectedIndexChanged
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If lstWorkers.SelectedItems.Count > 0 Then
+            db.createDbConnection(Application.StartupPath & "/db.sqlite")
+            db.queryDb("UPDATE workers SET fired=1 WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
+            db.closeDbConnection()
 
-    End Sub
-
-    Private Sub lstWorkers_DoubleClick(sender As Object, e As EventArgs) Handles lstWorkers.DoubleClick
-        If lstWorkers.SelectedItems(0).Text <> "" Then
-            frmWorker.loadForm(1, lstWorkers.SelectedItems(0).Text)
+            frmWorkersFire_Load(Nothing, Nothing)
         End If
     End Sub
 End Class

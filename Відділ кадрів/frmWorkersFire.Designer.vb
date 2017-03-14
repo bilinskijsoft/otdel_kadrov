@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmWorkers
+Partial Class frmWorkersFire
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет dispose для очистки списка компонентов.
@@ -22,7 +22,10 @@ Partial Class frmWorkers
     'Не изменяйте ее в редакторе исходного кода.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbOtdel = New System.Windows.Forms.ComboBox()
         Me.lstWorkers = New System.Windows.Forms.ListView()
+        Me.chId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chFio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chAdress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -33,28 +36,44 @@ Partial Class frmWorkers
         Me.chDataP = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chOtdel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chStazh = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbOtdel = New System.Windows.Forms.ComboBox()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.chId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnClear = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(9, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(36, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Відділ"
+        '
+        'cbOtdel
+        '
+        Me.cbOtdel.FormattingEnabled = True
+        Me.cbOtdel.Location = New System.Drawing.Point(51, 6)
+        Me.cbOtdel.Name = "cbOtdel"
+        Me.cbOtdel.Size = New System.Drawing.Size(121, 21)
+        Me.cbOtdel.TabIndex = 4
         '
         'lstWorkers
         '
         Me.lstWorkers.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.chId, Me.chFio, Me.chAdress, Me.chPhone, Me.chPosada, Me.chObrazovanie, Me.chStazhZag, Me.chSimPool, Me.chDataP, Me.chOtdel, Me.chStazh})
-        Me.lstWorkers.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lstWorkers.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.lstWorkers.FullRowSelect = True
         Me.lstWorkers.GridLines = True
-        Me.lstWorkers.Location = New System.Drawing.Point(3, 36)
+        Me.lstWorkers.Location = New System.Drawing.Point(0, 33)
         Me.lstWorkers.Name = "lstWorkers"
-        Me.lstWorkers.Size = New System.Drawing.Size(894, 460)
-        Me.lstWorkers.TabIndex = 0
+        Me.lstWorkers.Size = New System.Drawing.Size(896, 460)
+        Me.lstWorkers.TabIndex = 6
         Me.lstWorkers.UseCompatibleStateImageBehavior = False
         Me.lstWorkers.View = System.Windows.Forms.View.Details
+        '
+        'chId
+        '
+        Me.chId.Text = ""
+        Me.chId.Width = 0
         '
         'chFio
         '
@@ -103,79 +122,46 @@ Partial Class frmWorkers
         '
         Me.chStazh.Text = "Стаж"
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.btnClear)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.cbOtdel)
-        Me.Panel1.Location = New System.Drawing.Point(3, 3)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(885, 27)
-        Me.Panel1.TabIndex = 3
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 6)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(36, 13)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Відділ"
-        '
-        'cbOtdel
-        '
-        Me.cbOtdel.FormattingEnabled = True
-        Me.cbOtdel.Location = New System.Drawing.Point(48, 3)
-        Me.cbOtdel.Name = "cbOtdel"
-        Me.cbOtdel.Size = New System.Drawing.Size(121, 21)
-        Me.cbOtdel.TabIndex = 3
-        '
-        'TableLayoutPanel1
-        '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.Panel1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lstWorkers, 0, 1)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.813627!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.18637!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(900, 499)
-        Me.TableLayoutPanel1.TabIndex = 4
-        '
-        'chId
-        '
-        Me.chId.Text = ""
-        Me.chId.Width = 0
-        '
         'btnClear
         '
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(169, 2)
+        Me.btnClear.Location = New System.Drawing.Point(172, 5)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(23, 23)
-        Me.btnClear.TabIndex = 5
+        Me.btnClear.TabIndex = 7
         Me.btnClear.Text = "X"
         Me.btnClear.UseVisualStyleBackColor = True
         '
-        'frmWorkers
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(218, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Звільнити"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'frmWorkersFire
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(900, 499)
-        Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Name = "frmWorkers"
-        Me.Text = "frmWorkers"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.ClientSize = New System.Drawing.Size(896, 493)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnClear)
+        Me.Controls.Add(Me.lstWorkers)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cbOtdel)
+        Me.Name = "frmWorkersFire"
+        Me.Text = "frmWorkersFire"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
+    Friend WithEvents Label1 As Label
+    Friend WithEvents cbOtdel As ComboBox
     Friend WithEvents lstWorkers As ListView
+    Friend WithEvents chId As ColumnHeader
     Friend WithEvents chFio As ColumnHeader
     Friend WithEvents chAdress As ColumnHeader
     Friend WithEvents chPhone As ColumnHeader
@@ -186,10 +172,6 @@ Partial Class frmWorkers
     Friend WithEvents chDataP As ColumnHeader
     Friend WithEvents chOtdel As ColumnHeader
     Friend WithEvents chStazh As ColumnHeader
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cbOtdel As ComboBox
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents chId As ColumnHeader
     Friend WithEvents btnClear As Button
+    Friend WithEvents Button1 As Button
 End Class
