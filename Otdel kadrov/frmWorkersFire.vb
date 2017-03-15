@@ -61,8 +61,11 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If lstWorkers.SelectedItems.Count > 0 Then
+
             db.createDbConnection(Application.StartupPath & "/db.sqlite")
-            db.queryDb("UPDATE workers SET fired=1 WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
+            db.queryDb("INSERT INTO workersf(id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture) select id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture from workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "';")
+            db.queryDb("UPDATE workersf SET datauv=" & & " WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
+            db.queryDb("DELETE FROM workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
             db.closeDbConnection()
 
             frmWorkersFire_Load(Nothing, Nothing)
