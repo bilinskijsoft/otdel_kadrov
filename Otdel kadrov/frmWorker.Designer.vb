@@ -45,6 +45,9 @@ Partial Class frmWorker
         Me.txtStag = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnAction = New System.Windows.Forms.Button()
+        Me.openFile = New System.Windows.Forms.OpenFileDialog()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtId = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -54,6 +57,7 @@ Partial Class frmWorker
         Me.PictureBox1.Location = New System.Drawing.Point(13, 13)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(156, 190)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -235,11 +239,34 @@ Partial Class frmWorker
         Me.btnAction.Text = "Зберегти"
         Me.btnAction.UseVisualStyleBackColor = True
         '
+        'openFile
+        '
+        Me.openFile.FileName = "OpenFileDialog1"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(175, 180)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txtId
+        '
+        Me.txtId.Location = New System.Drawing.Point(180, 143)
+        Me.txtId.Name = "txtId"
+        Me.txtId.Size = New System.Drawing.Size(100, 20)
+        Me.txtId.TabIndex = 23
+        Me.txtId.Visible = False
+        '
         'frmWorker
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(564, 249)
+        Me.Controls.Add(Me.txtId)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txtStag)
         Me.Controls.Add(Me.txtOtdel)
@@ -294,4 +321,7 @@ Partial Class frmWorker
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnAction As Button
     Private WithEvents txtOsv As TextBox
+    Friend WithEvents openFile As OpenFileDialog
+    Friend WithEvents Button1 As Button
+    Friend WithEvents txtId As TextBox
 End Class

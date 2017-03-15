@@ -61,14 +61,20 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If lstWorkers.SelectedItems.Count > 0 Then
+            fireDialog.ShowDialog()
 
-            db.createDbConnection(Application.StartupPath & "/db.sqlite")
-            db.queryDb("INSERT INTO workersf(id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture) select id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture from workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "';")
-            db.queryDb("UPDATE workersf SET datauv=" & & " WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
-            db.queryDb("DELETE FROM workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
-            db.closeDbConnection()
+            If fireDialog.DialogResult = DialogResult.OK Then
 
-            frmWorkersFire_Load(Nothing, Nothing)
+                db.createDbConnection(Application.StartupPath & "/db.sqlite")
+                db.queryDb("INSERT INTO workersf(id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture) select id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture from workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "';" & "DELETE FROM workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
+                db.closeDbConnection()
+
+                frmWorkersFire_Load(Nothing, Nothing)
+            End If
         End If
+    End Sub
+
+    Private Sub lstWorkers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstWorkers.SelectedIndexChanged
+
     End Sub
 End Class
