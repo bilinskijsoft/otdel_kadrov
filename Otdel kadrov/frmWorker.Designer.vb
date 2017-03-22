@@ -146,9 +146,9 @@ Partial Class frmWorker
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(353, 16)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(83, 13)
+        Me.Label6.Size = New System.Drawing.Size(89, 13)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Стаж загаьний"
+        Me.Label6.Text = "Стаж загальний"
         '
         'Label7
         '
@@ -245,16 +245,16 @@ Partial Class frmWorker
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(175, 180)
+        Me.Button1.Location = New System.Drawing.Point(175, 143)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(171, 23)
         Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "Завантажити фото"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(180, 143)
+        Me.txtId.Location = New System.Drawing.Point(179, 172)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(100, 20)
         Me.txtId.TabIndex = 23
@@ -289,6 +289,9 @@ Partial Class frmWorker
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmWorker"
         Me.Text = "Працівник"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

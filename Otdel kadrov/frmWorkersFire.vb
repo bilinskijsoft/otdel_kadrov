@@ -23,9 +23,9 @@
         End While
         SQLreader.Close()
 
-        SQLreader = db.queryDb("SELECT * FROM workers")
+        SQLreader = db.queryDb("SELECT otdel FROM workers GROUP BY otdel")
         While SQLreader.Read
-            cbOtdel.Items.Add(SQLreader.GetValue(9))
+            cbOtdel.Items.Add(SQLreader.GetValue(0))
         End While
 
         db.closeDbConnection()

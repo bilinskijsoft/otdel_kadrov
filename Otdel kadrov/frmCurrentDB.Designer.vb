@@ -121,6 +121,9 @@ Partial Class frmCurrentDB
         Me.Controls.Add(Me.btnRemove)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnBranches)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmCurrentDB"
         Me.Text = "Відділ кадрів"
         Me.ResumeLayout(False)
