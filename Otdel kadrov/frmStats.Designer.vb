@@ -84,7 +84,7 @@ Partial Class frmStats
         Me.MinimizeBox = False
         Me.Name = "frmStats"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmStats"
+        Me.Text = "Звіт"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

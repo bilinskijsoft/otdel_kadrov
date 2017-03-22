@@ -116,7 +116,7 @@ Partial Class fireDialog
         Me.Name = "fireDialog"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Dialog1"
+        Me.Text = "Вкажіть дату та причину звільнення"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

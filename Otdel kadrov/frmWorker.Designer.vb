@@ -290,7 +290,7 @@ Partial Class frmWorker
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "frmWorker"
-        Me.Text = "frmWorker"
+        Me.Text = "Працівник"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)

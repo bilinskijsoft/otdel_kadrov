@@ -152,7 +152,7 @@ Partial Class frmWorkersFire
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cbOtdel)
         Me.Name = "frmWorkersFire"
-        Me.Text = "frmWorkersFire"
+        Me.Text = "Звільнення працівника"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

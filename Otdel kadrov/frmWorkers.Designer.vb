@@ -23,6 +23,7 @@ Partial Class frmWorkers
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.lstWorkers = New System.Windows.Forms.ListView()
+        Me.chId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chFio = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chAdress = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chPhone = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -34,11 +35,10 @@ Partial Class frmWorkers
         Me.chOtdel = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chStazh = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnClear = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbOtdel = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.chId = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnClear = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -55,6 +55,11 @@ Partial Class frmWorkers
         Me.lstWorkers.TabIndex = 0
         Me.lstWorkers.UseCompatibleStateImageBehavior = False
         Me.lstWorkers.View = System.Windows.Forms.View.Details
+        '
+        'chId
+        '
+        Me.chId.Text = ""
+        Me.chId.Width = 0
         '
         'chFio
         '
@@ -113,6 +118,16 @@ Partial Class frmWorkers
         Me.Panel1.Size = New System.Drawing.Size(885, 27)
         Me.Panel1.TabIndex = 3
         '
+        'btnClear
+        '
+        Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
+        Me.btnClear.Location = New System.Drawing.Point(169, 2)
+        Me.btnClear.Name = "btnClear"
+        Me.btnClear.Size = New System.Drawing.Size(23, 23)
+        Me.btnClear.TabIndex = 5
+        Me.btnClear.Text = "X"
+        Me.btnClear.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -145,21 +160,6 @@ Partial Class frmWorkers
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(900, 499)
         Me.TableLayoutPanel1.TabIndex = 4
         '
-        'chId
-        '
-        Me.chId.Text = ""
-        Me.chId.Width = 0
-        '
-        'btnClear
-        '
-        Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(169, 2)
-        Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(23, 23)
-        Me.btnClear.TabIndex = 5
-        Me.btnClear.Text = "X"
-        Me.btnClear.UseVisualStyleBackColor = True
-        '
         'frmWorkers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -167,7 +167,7 @@ Partial Class frmWorkers
         Me.ClientSize = New System.Drawing.Size(900, 499)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Name = "frmWorkers"
-        Me.Text = "frmWorkers"
+        Me.Text = "Працюючі працівники"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TableLayoutPanel1.ResumeLayout(False)

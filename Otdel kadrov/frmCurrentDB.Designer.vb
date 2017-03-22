@@ -122,7 +122,7 @@ Partial Class frmCurrentDB
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnBranches)
         Me.Name = "frmCurrentDB"
-        Me.Text = "frmCurrentDB"
+        Me.Text = "Відділ кадрів"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
