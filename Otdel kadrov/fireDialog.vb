@@ -2,6 +2,10 @@
 
 Public Class fireDialog
     Public result As dialogFireResult = New dialogFireResult
+
+    ''' <summary>
+    ''' Структура відповіді діалогового вікна
+    ''' </summary>
     Public Structure dialogFireResult
         Dim buttonOK As Boolean
         Dim dateFire As String

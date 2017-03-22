@@ -1,5 +1,8 @@
 ﻿Imports Microsoft.Office.Interop
 
+''' <summary>
+''' Класс роботи з файлом Excel
+''' </summary>
 Public Class excellApp
 
     Private app As Excel.Application
@@ -7,6 +10,10 @@ Public Class excellApp
     Private wSheet As Excel.Worksheet
     Private range As Excel.Range
 
+    ''' <summary>
+    ''' Створюєме екземпляр програми excell
+    ''' </summary>
+    ''' <param name="path">Шлях до файлу</param>
     Public Sub createExcellApp(path As String)
         app = CreateObject("Excel.Application")
         app.Visible = True
@@ -18,10 +25,19 @@ Public Class excellApp
         wSheet = wBook.ActiveSheet
     End Sub
 
+    ''' <summary>
+    ''' Записати інформацію до відкритого файлу
+    ''' </summary>
+    ''' <param name="text">Текст</param>
+    ''' <param name="row">Рядок файлу</param>
+    ''' <param name="col">Стовпчик файлу</param>
     Public Sub writeCell(text As String, row As Integer, col As Integer)
         wSheet.Cells(row, col).Value = text
     End Sub
 
+    ''' <summary>
+    ''' Знищюємо екземпляр програми Excel
+    ''' </summary>
     Public Sub destroyExcellApp()
         range = Nothing
         wSheet = Nothing
@@ -30,6 +46,10 @@ Public Class excellApp
         app = Nothing
     End Sub
 
+    ''' <summary>
+    ''' Скопіювати рядок файлу
+    ''' </summary>
+    ''' <param name="row">номер рядку</param>
     Public Sub copyRow(row As Integer)
         wSheet.Range("B" & row & ":G" & row).Copy(wSheet.Range("B" & row + 1 & ":G" & row + 1))
     End Sub

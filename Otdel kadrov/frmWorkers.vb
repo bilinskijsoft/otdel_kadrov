@@ -1,13 +1,22 @@
-﻿Public Class frmWorkers
+﻿''' <summary>
+''' Форма працівників
+''' </summary>
+Public Class frmWorkers
     Dim db As DataBase = New DataBase()
 
+    ''' <summary>
+    ''' При завантаженні форми заповнюємо фільтр та таблицю
+    ''' </summary>
     Private Sub frmWorkers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim SQLreader As System.Data.SQLite.SQLiteDataReader
+        'Виконуємо запит до БД
         db.createDbConnection(Application.StartupPath & "/db.sqlite")
         SQLreader = db.queryDb("SELECT * FROM workers WHERE fired=0")
+        'Видаляємо всі дані з таблиці та філтру
         lstWorkers.Items.Clear()
         cbOtdel.Items.Clear()
 
+        'Заповнюємо таблицю
         While SQLreader.Read
             lstWorkers.Items.Add(SQLreader.GetValue(0))
             lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(1))
@@ -23,6 +32,7 @@
         End While
         SQLreader.Close()
 
+        'Заповнюємо філтр
         SQLreader = db.queryDb("SELECT otdel FROM workers GROUP BY otdel")
         While SQLreader.Read
             cbOtdel.Items.Add(SQLreader.GetValue(0))
@@ -31,16 +41,15 @@
         db.closeDbConnection()
     End Sub
 
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel1.Paint
-
-    End Sub
-
+    'Зміна фільтру
     Private Sub cbOtdel_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbOtdel.SelectedIndexChanged
         Dim SQLreader As System.Data.SQLite.SQLiteDataReader
         db.createDbConnection(Application.StartupPath & "/db.sqlite")
+        'Іиконуємо запит до БД з фільтром
         SQLreader = db.queryDb("SELECT * FROM workers WHERE otdel='" & cbOtdel.SelectedItem.ToString & "'")
         lstWorkers.Items.Clear()
 
+        'Виводимм результат в таблицю
         While SQLreader.Read
             lstWorkers.Items.Add(SQLreader.GetValue(0))
             lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(1))
@@ -58,15 +67,13 @@
         db.closeDbConnection()
     End Sub
 
+    'Кнопка відміни філтрації
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         cbOtdel.Text = ""
         frmWorkers_Load(Nothing, Nothing)
     End Sub
 
-    Private Sub lstWorkers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstWorkers.SelectedIndexChanged
-
-    End Sub
-
+    'При подвійному натисканні мішою по працівнику - відкриваємо форму зміни даних
     Private Sub lstWorkers_DoubleClick(sender As Object, e As EventArgs) Handles lstWorkers.DoubleClick
         If lstWorkers.SelectedItems(0).Text <> "" Then
             frmWorker.loadForm(1, lstWorkers.SelectedItems(0).Text)
