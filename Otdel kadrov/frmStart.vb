@@ -10,4 +10,12 @@ Public Class frmStart
         MsgBox("Увага!" & vbCrLf & "Усі дати вводити у форматі ДД-ММ-РРРР!", MsgBoxStyle.Exclamation, "Увага!")
         frmCurrentDB.Show()
     End Sub
+
+    Private Sub frmStart_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Try
+            MkDir(Application.StartupPath & "\images")
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

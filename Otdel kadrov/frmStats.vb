@@ -69,6 +69,7 @@ Public Class frmStats
                 excell.writeCell(SQLreader.GetValue(9), counter + 7, 5)
                 excell.writeCell(SQLreader.GetValue(8), counter + 7, 7)
                 excell.writeCell(SQLreader.GetValue(14), counter + 7, 6)
+                excell.writeCell(SQLreader.GetValue(13), counter + 7, 8)
             End If
 
         End While

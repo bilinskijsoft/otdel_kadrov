@@ -84,17 +84,22 @@ Public Class frmWorker
 
             'Заповнюємо поля
             SQLreader.Read()
+            'Вираховуємо стаж роботи
+            Dim dataPriem = Date.Parse(SQLreader.GetValue(8))
+            Dim stag = (Year(Date.Now) - Year(dataPriem)) * 12
+            stag = stag + Month(Date.Now) - Month(dataPriem)
+
             txtId.Text = SQLreader.GetValue(0)
             txtFIO.Text = SQLreader.GetValue(1)
             txtAdress.Text = SQLreader.GetValue(2)
             txtPhone.Text = SQLreader.GetValue(3)
             txtDolgn.Text = SQLreader.GetValue(4)
             txtOsv.Text = SQLreader.GetValue(5)
-            txtStagO.Text = SQLreader.GetValue(6)
+            txtStagO.Text = SQLreader.GetValue(6) + stag
             txtSimPolog.Text = SQLreader.GetValue(7)
             txtData.Text = SQLreader.GetValue(8)
             txtOtdel.Text = SQLreader.GetValue(9)
-            txtStag.Text = SQLreader.GetValue(10)
+            txtStag.Text = stag
 
             PictureBox1.ImageLocation = SQLreader.GetValue(12)
 
@@ -115,5 +120,9 @@ Public Class frmWorker
             .FilterIndex = 2
         End With
         PictureBox1.Image = Image.FromFile(openFile.FileName)
+    End Sub
+
+    Private Sub frmWorker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

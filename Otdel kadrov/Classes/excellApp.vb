@@ -51,6 +51,6 @@ Public Class excellApp
     ''' </summary>
     ''' <param name="row">номер рядку</param>
     Public Sub copyRow(row As Integer)
-        wSheet.Range("B" & row & ":G" & row).Copy(wSheet.Range("B" & row + 1 & ":G" & row + 1))
+        wSheet.Range("B" & row & ":H" & row).Copy(wSheet.Range("B" & row + 1 & ":H" & row + 1))
     End Sub
 End Class
