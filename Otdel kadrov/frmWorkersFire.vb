@@ -66,7 +66,9 @@
             If fireDialog.DialogResult = DialogResult.OK Then
 
                 db.createDbConnection(Application.StartupPath & "/db.sqlite")
-                db.queryDb("INSERT INTO workersf(id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture) select id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture from workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "';" & "DELETE FROM workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "'")
+                db.queryDb("INSERT INTO workersf(id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture) select id, fio, adress, phone, dolgn, obraz, stagob, simp, otdel, stag, picture from workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "';" & "
+                            DELETE FROM workers WHERE id='" & lstWorkers.SelectedItems(0).Text & "'; 
+                            UPDATE workersf SET datauv='" & fireDialog.result.dateFire & "', reason='" & fireDialog.result.reason & "' WHERE id='" & lstWorkers.SelectedItems(0).Text & "';")
                 db.closeDbConnection()
 
                 frmWorkersFire_Load(Nothing, Nothing)

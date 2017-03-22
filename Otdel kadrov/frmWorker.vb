@@ -5,13 +5,11 @@ Public Class frmWorker
     Dim db As DataBase = New DataBase()
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnAction.Click
-        If Not MkDir(Application.StartupPath & "\images\").Then Then
+        If btnAction.Text = "Зберегти" Then
+            PictureBox1.Image.Save(Application.StartupPath & "\images\" & txtId.Text & ".jpg", Imaging.ImageFormat.Jpeg)
 
-            If btnAction.Text = "Зберегти" Then
-                PictureBox1.Image.Save(Application.StartupPath & "\images\" & txtId.Text & ".jpg", Imaging.ImageFormat.Jpeg)
-
-                db.createDbConnection(Application.StartupPath & "/db.sqlite")
-                db.queryDb("UPDATE workers SET 
+            db.createDbConnection(Application.StartupPath & "/db.sqlite")
+            db.queryDb("UPDATE workers SET 
                         fio= '" & txtFIO.Text & "',
                         adress= '" & txtAdress.Text & "',
                         phone= '" & txtPhone.Text & "',
@@ -22,10 +20,35 @@ Public Class frmWorker
                         datap= '" & txtData.Text & "',
                         otdel= '" & txtOtdel.Text & "',
                         stag= '" & txtStag.Text & "',
-                        picture= '" & Application.StartupPath & "\images\" & txtId.Text & ".jpg""',
+                        picture= '" & Application.StartupPath & "\images\" & txtId.Text & ".jpg' 
                         WHERE id=" & txtId.Text)
-                db.closeDbConnection()
-            End If
+            db.closeDbConnection()
+        Else
+            Dim SQLreader As System.Data.SQLite.SQLiteDataReader
+            db.createDbConnection(Application.StartupPath & "/db.sqlite")
+            db.queryDb("INSERT INTO workers (fio, adress, phone, dolgn, obraz, simp, datap, otdel, stag, picture) 
+                                    VALUES  ('" & txtFIO.Text & "', 
+                                             '" & txtAdress.Text & "', 
+                                             '" & txtPhone.Text & "', 
+                                             '" & txtDolgn.Text & "', 
+                                             '" & txtOsv.Text & "', 
+                                             '" & txtSimPolog.Text & "', 
+                                             '" & txtData.Text & "', 
+                                             '" & txtOtdel.Text & "', 
+                                             '" & txtStag.Text & "', 
+                                             '')")
+            db.closeDbConnection()
+            db.createDbConnection(Application.StartupPath & "/db.sqlite")
+            SQLreader = db.queryDb("SELECT seq FROM sqlite_sequence WHERE name='workers'")
+            SQLreader.Read()
+            Dim imgPath = Application.StartupPath & "\images\" & SQLreader.GetValue(0) & ".jpg"
+            Dim id = SQLreader.GetValue(0)
+            PictureBox1.Image.Save(imgPath, Imaging.ImageFormat.Jpeg)
+            SQLreader.Close()
+            db.closeDbConnection()
+            db.createDbConnection(Application.StartupPath & "/db.sqlite")
+            db.queryDb("UPDATE workers SET picture='" & imgPath & "' WHERE id=" & id)
+            db.closeDbConnection()
         End If
         Me.Close()
     End Sub
@@ -52,6 +75,8 @@ Public Class frmWorker
             txtData.Text = SQLreader.GetValue(8)
             txtOtdel.Text = SQLreader.GetValue(9)
             txtStag.Text = SQLreader.GetValue(10)
+
+            PictureBox1.ImageLocation = SQLreader.GetValue(12)
 
             SQLreader.Close()
             db.closeDbConnection()
