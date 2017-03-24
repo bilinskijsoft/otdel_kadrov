@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmWorker
+Partial Class frmWorkerRecover
     Inherits System.Windows.Forms.Form
 
     'Форма переопределяет dispose для очистки списка компонентов.
@@ -23,9 +23,13 @@ Partial Class frmWorker
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.txtId = New System.Windows.Forms.TextBox()
+        Me.txtOtdel = New System.Windows.Forms.TextBox()
+        Me.txtDataUv = New System.Windows.Forms.TextBox()
         Me.txtData = New System.Windows.Forms.TextBox()
         Me.txtSimPolog = New System.Windows.Forms.TextBox()
         Me.txtStagO = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -40,12 +44,7 @@ Partial Class frmWorker
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtDataUv = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtOtdel = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtReason = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,29 +53,61 @@ Partial Class frmWorker
         Me.txtId.Location = New System.Drawing.Point(12, 208)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(100, 20)
-        Me.txtId.TabIndex = 47
+        Me.txtId.TabIndex = 71
         Me.txtId.Visible = False
+        '
+        'txtOtdel
+        '
+        Me.txtOtdel.Location = New System.Drawing.Point(461, 116)
+        Me.txtOtdel.Name = "txtOtdel"
+        Me.txtOtdel.Size = New System.Drawing.Size(100, 20)
+        Me.txtOtdel.TabIndex = 70
+        '
+        'txtDataUv
+        '
+        Me.txtDataUv.Location = New System.Drawing.Point(461, 90)
+        Me.txtDataUv.Name = "txtDataUv"
+        Me.txtDataUv.Size = New System.Drawing.Size(100, 20)
+        Me.txtDataUv.TabIndex = 69
         '
         'txtData
         '
         Me.txtData.Location = New System.Drawing.Point(461, 64)
         Me.txtData.Name = "txtData"
         Me.txtData.Size = New System.Drawing.Size(100, 20)
-        Me.txtData.TabIndex = 42
+        Me.txtData.TabIndex = 68
         '
         'txtSimPolog
         '
         Me.txtSimPolog.Location = New System.Drawing.Point(461, 38)
         Me.txtSimPolog.Name = "txtSimPolog"
         Me.txtSimPolog.Size = New System.Drawing.Size(100, 20)
-        Me.txtSimPolog.TabIndex = 41
+        Me.txtSimPolog.TabIndex = 67
         '
         'txtStagO
         '
         Me.txtStagO.Location = New System.Drawing.Point(461, 12)
         Me.txtStagO.Name = "txtStagO"
         Me.txtStagO.Size = New System.Drawing.Size(100, 20)
-        Me.txtStagO.TabIndex = 40
+        Me.txtStagO.TabIndex = 66
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(352, 119)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(36, 13)
+        Me.Label10.TabIndex = 65
+        Me.Label10.Text = "Відділ"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(352, 93)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(92, 13)
+        Me.Label9.TabIndex = 64
+        Me.Label9.Text = "Дата звільнення"
         '
         'Label8
         '
@@ -84,7 +115,7 @@ Partial Class frmWorker
         Me.Label8.Location = New System.Drawing.Point(352, 67)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(79, 13)
-        Me.Label8.TabIndex = 37
+        Me.Label8.TabIndex = 63
         Me.Label8.Text = "Дата прийому"
         '
         'Label7
@@ -93,7 +124,7 @@ Partial Class frmWorker
         Me.Label7.Location = New System.Drawing.Point(352, 41)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 13)
-        Me.Label7.TabIndex = 36
+        Me.Label7.TabIndex = 62
         Me.Label7.Text = "Сім. положення"
         '
         'Label6
@@ -102,7 +133,7 @@ Partial Class frmWorker
         Me.Label6.Location = New System.Drawing.Point(352, 15)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 13)
-        Me.Label6.TabIndex = 35
+        Me.Label6.TabIndex = 61
         Me.Label6.Text = "Стаж загальний"
         '
         'txtOsv
@@ -110,35 +141,35 @@ Partial Class frmWorker
         Me.txtOsv.Location = New System.Drawing.Point(245, 116)
         Me.txtOsv.Name = "txtOsv"
         Me.txtOsv.Size = New System.Drawing.Size(100, 20)
-        Me.txtOsv.TabIndex = 34
+        Me.txtOsv.TabIndex = 60
         '
         'txtDolgn
         '
         Me.txtDolgn.Location = New System.Drawing.Point(245, 90)
         Me.txtDolgn.Name = "txtDolgn"
         Me.txtDolgn.Size = New System.Drawing.Size(100, 20)
-        Me.txtDolgn.TabIndex = 33
+        Me.txtDolgn.TabIndex = 59
         '
         'txtPhone
         '
         Me.txtPhone.Location = New System.Drawing.Point(245, 64)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 20)
-        Me.txtPhone.TabIndex = 32
+        Me.txtPhone.TabIndex = 58
         '
         'txtAdress
         '
         Me.txtAdress.Location = New System.Drawing.Point(245, 38)
         Me.txtAdress.Name = "txtAdress"
         Me.txtAdress.Size = New System.Drawing.Size(100, 20)
-        Me.txtAdress.TabIndex = 31
+        Me.txtAdress.TabIndex = 57
         '
         'txtFIO
         '
         Me.txtFIO.Location = New System.Drawing.Point(245, 12)
         Me.txtFIO.Name = "txtFIO"
         Me.txtFIO.Size = New System.Drawing.Size(100, 20)
-        Me.txtFIO.TabIndex = 30
+        Me.txtFIO.TabIndex = 56
         '
         'Label5
         '
@@ -146,7 +177,7 @@ Partial Class frmWorker
         Me.Label5.Location = New System.Drawing.Point(176, 119)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(40, 13)
-        Me.Label5.TabIndex = 29
+        Me.Label5.TabIndex = 55
         Me.Label5.Text = "Освіта"
         '
         'Label4
@@ -155,7 +186,7 @@ Partial Class frmWorker
         Me.Label4.Location = New System.Drawing.Point(175, 93)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 13)
-        Me.Label4.TabIndex = 28
+        Me.Label4.TabIndex = 54
         Me.Label4.Text = "Посада"
         '
         'Label3
@@ -164,7 +195,7 @@ Partial Class frmWorker
         Me.Label3.Location = New System.Drawing.Point(175, 67)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 13)
-        Me.Label3.TabIndex = 27
+        Me.Label3.TabIndex = 53
         Me.Label3.Text = "Телефон"
         '
         'Label2
@@ -173,7 +204,7 @@ Partial Class frmWorker
         Me.Label2.Location = New System.Drawing.Point(176, 41)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
-        Me.Label2.TabIndex = 26
+        Me.Label2.TabIndex = 52
         Me.Label2.Text = "Адреса"
         '
         'Label1
@@ -182,7 +213,7 @@ Partial Class frmWorker
         Me.Label1.Location = New System.Drawing.Point(176, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(25, 13)
-        Me.Label1.TabIndex = 25
+        Me.Label1.TabIndex = 51
         Me.Label1.Text = "ПІБ"
         '
         'PictureBox1
@@ -191,64 +222,24 @@ Partial Class frmWorker
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(156, 190)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 24
+        Me.PictureBox1.TabIndex = 50
         Me.PictureBox1.TabStop = False
         '
-        'Label9
+        'Button1
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(352, 93)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(92, 13)
-        Me.Label9.TabIndex = 38
-        Me.Label9.Text = "Дата звільнення"
+        Me.Button1.Location = New System.Drawing.Point(443, 194)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(118, 34)
+        Me.Button1.TabIndex = 72
+        Me.Button1.Text = "Відновити"
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'txtDataUv
-        '
-        Me.txtDataUv.Location = New System.Drawing.Point(461, 90)
-        Me.txtDataUv.Name = "txtDataUv"
-        Me.txtDataUv.Size = New System.Drawing.Size(100, 20)
-        Me.txtDataUv.TabIndex = 43
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(352, 119)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(36, 13)
-        Me.Label10.TabIndex = 39
-        Me.Label10.Text = "Відділ"
-        '
-        'txtOtdel
-        '
-        Me.txtOtdel.Location = New System.Drawing.Point(461, 116)
-        Me.txtOtdel.Name = "txtOtdel"
-        Me.txtOtdel.Size = New System.Drawing.Size(100, 20)
-        Me.txtOtdel.TabIndex = 44
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(176, 144)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(50, 13)
-        Me.Label11.TabIndex = 48
-        Me.Label11.Text = "Причина"
-        '
-        'txtReason
-        '
-        Me.txtReason.Location = New System.Drawing.Point(245, 141)
-        Me.txtReason.Name = "txtReason"
-        Me.txtReason.Size = New System.Drawing.Size(316, 20)
-        Me.txtReason.TabIndex = 49
-        '
-        'frmWorker
+        'frmWorkerRecover
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(595, 309)
-        Me.Controls.Add(Me.txtReason)
-        Me.Controls.Add(Me.Label11)
+        Me.ClientSize = New System.Drawing.Size(574, 239)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.txtOtdel)
         Me.Controls.Add(Me.txtDataUv)
@@ -271,11 +262,8 @@ Partial Class frmWorker
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "frmWorker"
-        Me.Text = "frmWorker"
+        Me.Name = "frmWorkerRecover"
+        Me.Text = "frmWorkerRecover"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -283,9 +271,13 @@ Partial Class frmWorker
     End Sub
 
     Friend WithEvents txtId As TextBox
+    Friend WithEvents txtOtdel As TextBox
+    Friend WithEvents txtDataUv As TextBox
     Friend WithEvents txtData As TextBox
     Friend WithEvents txtSimPolog As TextBox
     Friend WithEvents txtStagO As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
@@ -300,10 +292,5 @@ Partial Class frmWorker
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents txtDataUv As TextBox
-    Friend WithEvents Label10 As Label
-    Friend WithEvents txtOtdel As TextBox
-    Friend WithEvents Label11 As Label
-    Friend WithEvents txtReason As TextBox
+    Friend WithEvents Button1 As Button
 End Class
