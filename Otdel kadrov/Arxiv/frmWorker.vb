@@ -41,8 +41,4 @@
 
         Me.Show()
     End Sub
-
-    Private Sub frmWorker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

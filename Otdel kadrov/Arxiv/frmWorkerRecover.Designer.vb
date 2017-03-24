@@ -24,12 +24,10 @@ Partial Class frmWorkerRecover
     Private Sub InitializeComponent()
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.txtOtdel = New System.Windows.Forms.TextBox()
-        Me.txtDataUv = New System.Windows.Forms.TextBox()
         Me.txtData = New System.Windows.Forms.TextBox()
         Me.txtSimPolog = New System.Windows.Forms.TextBox()
         Me.txtStagO = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -44,7 +42,9 @@ Partial Class frmWorkerRecover
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnRecover = New System.Windows.Forms.Button()
+        Me.OpenFile = New System.Windows.Forms.OpenFileDialog()
+        Me.btnOpenFile = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,17 +58,10 @@ Partial Class frmWorkerRecover
         '
         'txtOtdel
         '
-        Me.txtOtdel.Location = New System.Drawing.Point(461, 116)
+        Me.txtOtdel.Location = New System.Drawing.Point(461, 90)
         Me.txtOtdel.Name = "txtOtdel"
         Me.txtOtdel.Size = New System.Drawing.Size(100, 20)
         Me.txtOtdel.TabIndex = 70
-        '
-        'txtDataUv
-        '
-        Me.txtDataUv.Location = New System.Drawing.Point(461, 90)
-        Me.txtDataUv.Name = "txtDataUv"
-        Me.txtDataUv.Size = New System.Drawing.Size(100, 20)
-        Me.txtDataUv.TabIndex = 69
         '
         'txtData
         '
@@ -94,20 +87,11 @@ Partial Class frmWorkerRecover
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(352, 119)
+        Me.Label10.Location = New System.Drawing.Point(352, 93)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(36, 13)
         Me.Label10.TabIndex = 65
         Me.Label10.Text = "Відділ"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(352, 93)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(92, 13)
-        Me.Label9.TabIndex = 64
-        Me.Label9.Text = "Дата звільнення"
         '
         'Label8
         '
@@ -225,29 +209,41 @@ Partial Class frmWorkerRecover
         Me.PictureBox1.TabIndex = 50
         Me.PictureBox1.TabStop = False
         '
-        'Button1
+        'btnRecover
         '
-        Me.Button1.Location = New System.Drawing.Point(443, 194)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(118, 34)
-        Me.Button1.TabIndex = 72
-        Me.Button1.Text = "Відновити"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRecover.Location = New System.Drawing.Point(443, 194)
+        Me.btnRecover.Name = "btnRecover"
+        Me.btnRecover.Size = New System.Drawing.Size(118, 34)
+        Me.btnRecover.TabIndex = 72
+        Me.btnRecover.Text = "Відновити"
+        Me.btnRecover.UseVisualStyleBackColor = True
+        '
+        'OpenFile
+        '
+        Me.OpenFile.FileName = "OpenFileDialog1"
+        '
+        'btnOpenFile
+        '
+        Me.btnOpenFile.Location = New System.Drawing.Point(179, 142)
+        Me.btnOpenFile.Name = "btnOpenFile"
+        Me.btnOpenFile.Size = New System.Drawing.Size(166, 23)
+        Me.btnOpenFile.TabIndex = 73
+        Me.btnOpenFile.Text = "Завантажити фото"
+        Me.btnOpenFile.UseVisualStyleBackColor = True
         '
         'frmWorkerRecover
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(574, 239)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnOpenFile)
+        Me.Controls.Add(Me.btnRecover)
         Me.Controls.Add(Me.txtId)
         Me.Controls.Add(Me.txtOtdel)
-        Me.Controls.Add(Me.txtDataUv)
         Me.Controls.Add(Me.txtData)
         Me.Controls.Add(Me.txtSimPolog)
         Me.Controls.Add(Me.txtStagO)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -272,12 +268,10 @@ Partial Class frmWorkerRecover
 
     Friend WithEvents txtId As TextBox
     Friend WithEvents txtOtdel As TextBox
-    Friend WithEvents txtDataUv As TextBox
     Friend WithEvents txtData As TextBox
     Friend WithEvents txtSimPolog As TextBox
     Friend WithEvents txtStagO As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
@@ -292,5 +286,7 @@ Partial Class frmWorkerRecover
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnRecover As Button
+    Friend WithEvents OpenFile As OpenFileDialog
+    Friend WithEvents btnOpenFile As Button
 End Class

@@ -67,4 +67,9 @@
         End If
     End Sub
 
+    Private Sub btnRecover_Click(sender As Object, e As EventArgs) Handles btnRecover.Click
+        If lstWorkers.SelectedItems.Count > 0 Then
+            frmWorkerRecover.loadForm(lstWorkers.SelectedItems(0).Text)
+        End If
+    End Sub
 End Class

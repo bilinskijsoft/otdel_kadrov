@@ -33,12 +33,12 @@ Partial Class frmFindWorker
         Me.chStazhZag = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chSimPool = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.chDataP = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.chDataUv = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.btnRecover = New System.Windows.Forms.Button()
-        Me.chDataUv = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.txtClear = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -119,6 +119,11 @@ Partial Class frmFindWorker
         Me.chDataP.Text = "Дата прийому"
         Me.chDataP.Width = 89
         '
+        'chDataUv
+        '
+        Me.chDataUv.Text = "Дата звільнення"
+        Me.chDataUv.Width = 90
+        '
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.ColumnCount = 2
@@ -179,11 +184,6 @@ Partial Class frmFindWorker
         Me.btnRecover.TabIndex = 0
         Me.btnRecover.Text = "Відновити"
         Me.btnRecover.UseVisualStyleBackColor = True
-        '
-        'chDataUv
-        '
-        Me.chDataUv.Text = "Дата звільнення"
-        Me.chDataUv.Width = 90
         '
         'txtClear
         '
