@@ -61,7 +61,10 @@
         DB.closeDbConnection()
     End Sub
 
-    Private Sub TableLayoutPanel3_Paint(sender As Object, e As PaintEventArgs) Handles TableLayoutPanel3.Paint
-
+    Private Sub lstWorkers_DoubleClick(sender As Object, e As EventArgs) Handles lstWorkers.DoubleClick
+        If lstWorkers.SelectedItems(0).Text <> "" Then
+            frmWorker.loadForm(lstWorkers.SelectedItems(0).Text)
+        End If
     End Sub
+
 End Class
