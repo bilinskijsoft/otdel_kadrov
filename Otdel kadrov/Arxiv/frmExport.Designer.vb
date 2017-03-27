@@ -23,15 +23,15 @@ Partial Class frmExport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtFromM = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtFromR = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtToM = New System.Windows.Forms.TextBox()
-        Me.txtToR = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtFromM = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtToR = New System.Windows.Forms.TextBox()
+        Me.txtToM = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnExport = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -50,6 +50,38 @@ Partial Class frmExport
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Період з"
         '
+        'txtFromR
+        '
+        Me.txtFromR.Location = New System.Drawing.Point(71, 43)
+        Me.txtFromR.Name = "txtFromR"
+        Me.txtFromR.Size = New System.Drawing.Size(100, 20)
+        Me.txtFromR.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 46)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(22, 13)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Рік"
+        '
+        'txtFromM
+        '
+        Me.txtFromM.Location = New System.Drawing.Point(71, 17)
+        Me.txtFromM.Name = "txtFromM"
+        Me.txtFromM.Size = New System.Drawing.Size(100, 20)
+        Me.txtFromM.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(42, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Місяць"
+        '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label4)
@@ -63,37 +95,28 @@ Partial Class frmExport
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Період по"
         '
-        'Label1
+        'Label4
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(7, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Місяць"
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(10, 47)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(22, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Рік"
         '
-        'txtFromM
+        'txtToR
         '
-        Me.txtFromM.Location = New System.Drawing.Point(71, 17)
-        Me.txtFromM.Name = "txtFromM"
-        Me.txtFromM.Size = New System.Drawing.Size(100, 20)
-        Me.txtFromM.TabIndex = 1
+        Me.txtToR.Location = New System.Drawing.Point(71, 44)
+        Me.txtToR.Name = "txtToR"
+        Me.txtToR.Size = New System.Drawing.Size(100, 20)
+        Me.txtToR.TabIndex = 2
         '
-        'Label2
+        'txtToM
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(7, 46)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(22, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Рік"
-        '
-        'txtFromR
-        '
-        Me.txtFromR.Location = New System.Drawing.Point(71, 43)
-        Me.txtFromR.Name = "txtFromR"
-        Me.txtFromR.Size = New System.Drawing.Size(100, 20)
-        Me.txtFromR.TabIndex = 3
+        Me.txtToM.Location = New System.Drawing.Point(71, 17)
+        Me.txtToM.Name = "txtToM"
+        Me.txtToM.Size = New System.Drawing.Size(100, 20)
+        Me.txtToM.TabIndex = 1
         '
         'Label3
         '
@@ -103,29 +126,6 @@ Partial Class frmExport
         Me.Label3.Size = New System.Drawing.Size(42, 13)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Місяць"
-        '
-        'txtToM
-        '
-        Me.txtToM.Location = New System.Drawing.Point(71, 17)
-        Me.txtToM.Name = "txtToM"
-        Me.txtToM.Size = New System.Drawing.Size(100, 20)
-        Me.txtToM.TabIndex = 1
-        '
-        'txtToR
-        '
-        Me.txtToR.Location = New System.Drawing.Point(71, 44)
-        Me.txtToR.Name = "txtToR"
-        Me.txtToR.Size = New System.Drawing.Size(100, 20)
-        Me.txtToR.TabIndex = 2
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(10, 47)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(22, 13)
-        Me.Label4.TabIndex = 3
-        Me.Label4.Text = "Рік"
         '
         'btnExport
         '

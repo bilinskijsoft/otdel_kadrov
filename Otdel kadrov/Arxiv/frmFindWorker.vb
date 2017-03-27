@@ -5,7 +5,7 @@
         If Trim(txtSearch.Text) <> "" Then
             Dim SQLreader As System.Data.SQLite.SQLiteDataReader
             DB.createDbConnection(Application.StartupPath & "/db.sqlite")
-            'Іиконуємо запит до БД з фільтром
+            'Виконуємо запит до БД з фільтром
             SQLreader = DB.queryDb("SELECT * FROM workersf WHERE fio LIKE '%" & Trim(txtSearch.Text) & "%'")
             lstWorkers.Items.Clear()
 
@@ -62,12 +62,14 @@
     End Sub
 
     Private Sub lstWorkers_DoubleClick(sender As Object, e As EventArgs) Handles lstWorkers.DoubleClick
+        'Відкрити працівника по кліку на список
         If lstWorkers.SelectedItems(0).Text <> "" Then
             frmWorker.loadForm(lstWorkers.SelectedItems(0).Text)
         End If
     End Sub
 
     Private Sub btnRecover_Click(sender As Object, e As EventArgs) Handles btnRecover.Click
+        'Відновити працівника
         If lstWorkers.SelectedItems.Count > 0 Then
             frmWorkerRecover.loadForm(lstWorkers.SelectedItems(0).Text)
         End If
