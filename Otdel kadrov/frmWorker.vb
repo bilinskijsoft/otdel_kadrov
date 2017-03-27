@@ -28,7 +28,7 @@ Public Class frmWorker
                         datap= '" & txtData.Text & "',
                         otdel= '" & txtOtdel.Text & "',
                         stag= '" & txtStag.Text & "',
-                        picture= '" & Application.StartupPath & "\images\" & txtId.Text & ".jpg' 
+                        picture= '\images\" & txtId.Text & ".jpg' 
                         WHERE id=" & txtId.Text)
             db.closeDbConnection()
         Else 'Якщо додаємо працівника
@@ -52,7 +52,7 @@ Public Class frmWorker
             SQLreader = db.queryDb("SELECT seq FROM sqlite_sequence WHERE name='workers'")
             SQLreader.Read()
             'Збережемо зображення
-            Dim imgPath = Application.StartupPath & "\images\" & SQLreader.GetValue(0) & ".jpg"
+            Dim imgPath = "\images\" & SQLreader.GetValue(0) & ".jpg"
             Dim id = SQLreader.GetValue(0)
             PictureBox1.Image.Save(imgPath, Imaging.ImageFormat.Jpeg)
             SQLreader.Close()
@@ -101,7 +101,7 @@ Public Class frmWorker
             txtOtdel.Text = SQLreader.GetValue(9)
             txtStag.Text = stag
 
-            PictureBox1.ImageLocation = SQLreader.GetValue(12)
+            PictureBox1.ImageLocation = Application.StartupPath & SQLreader.GetValue(12)
 
             SQLreader.Close()
             db.closeDbConnection()
@@ -122,7 +122,4 @@ Public Class frmWorker
         PictureBox1.Image = Image.FromFile(openFile.FileName)
     End Sub
 
-    Private Sub frmWorker_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

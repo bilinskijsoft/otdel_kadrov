@@ -18,4 +18,10 @@ Public Class frmStart
 
         End Try
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Process.Start(Application.StartupPath & "\Arxiv.exe")
+        Shell("Arxiv.exe")
+        Application.Exit()
+    End Sub
 End Class

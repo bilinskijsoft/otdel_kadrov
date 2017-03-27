@@ -74,4 +74,33 @@
             frmWorkerRecover.loadForm(lstWorkers.SelectedItems(0).Text)
         End If
     End Sub
+
+    Public Sub RefreshData()
+        Dim SQLreader As System.Data.SQLite.SQLiteDataReader
+        DB.createDbConnection(Application.StartupPath & "/db.sqlite")
+        'Іиконуємо запит до БД з фільтром
+        SQLreader = DB.queryDb("SELECT * FROM workersf")
+        lstWorkers.Items.Clear()
+
+        'Виводимм результат в таблицю
+        While SQLreader.Read
+            'Вираховуємо стаж роботи
+            Dim dataPriem = Date.Parse(SQLreader.GetValue(8))
+            Dim stag = (Year(Date.Now) - Year(dataPriem)) * 12
+            stag = stag + Month(Date.Now) - Month(dataPriem)
+
+            lstWorkers.Items.Add(SQLreader.GetValue(0))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(1))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(2))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(3))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(4))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(5))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(6) + stag)
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(7))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(14))
+            lstWorkers.Items.Item(lstWorkers.Items.Count - 1).SubItems.Add(SQLreader.GetValue(8))
+        End While
+        SQLreader.Close()
+        DB.closeDbConnection()
+    End Sub
 End Class

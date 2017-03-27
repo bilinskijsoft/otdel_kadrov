@@ -39,11 +39,8 @@ Public Class frmMain
         DB.closeDbConnection()
     End Sub
 
-    Private Sub frmMain_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        excel.destroyExcellApp()
-    End Sub
-
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         frmExport.Show()
     End Sub
+
 End Class

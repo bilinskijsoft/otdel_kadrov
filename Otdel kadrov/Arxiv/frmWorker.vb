@@ -34,7 +34,7 @@
         txtReason.Text = SQLreader.GetValue(13)
         txtOtdel.Text = stag
 
-        PictureBox1.ImageLocation = SQLreader.GetValue(12)
+        PictureBox1.ImageLocation = Application.StartupPath & SQLreader.GetValue(12)
 
         SQLreader.Close()
         db.closeDbConnection()
